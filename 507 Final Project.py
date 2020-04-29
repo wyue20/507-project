@@ -196,30 +196,38 @@ def scatter_for_three(all_rating, all_rev, all_name):
    fig.add_trace(plotly.graph_objects.Scatter(x=all_rating, y=all_rev, text=all_name)) 
 
    fig.update_layout(title="Rating vs Total Review Counts",
-                     xaxis_title = "Ratings of the restaurant",
-                     yaxis_title = "Total Review Counts for the restaurant")
+                     xaxis_title = "Ratings of the restaurants",
+                     yaxis_title = "Total Review Counts for the restaurants")
    fig.show()
 
 def bar_chart_rating(all_rating, all_name):
    fig = plotly.graph_objects.Figure([plotly.graph_objects.Bar(x=all_rating, y=all_name)])
-   fig.update_layout(title="Ratings for the Restaurant",
+   fig.update_layout(title="Ratings for the Restaurants",
                      xaxis_title = "Ratings",
                      yaxis_title = "The Restaurant")
    fig.show()
 
 def bar_chart_rev(all_rev, all_name):
    fig = plotly.graph_objects.Figure([plotly.graph_objects.Bar(x=all_rev, y=all_name)])
-   fig.update_layout(title="Total Review Counts for the Restaurant",
+   fig.update_layout(title="Total Review Counts for the Restaurants",
                      xaxis_title = "Total Review Counts",
-                     yaxis_title = "The Restaurant")
+                     yaxis_title = "The Restaurants")
    fig.show()
 
-def scatter_for_two(all_rating, all_rev):
+def scatter_for_two(all_rating, all_name):
    fig = plotly.graph_objects.Figure()
-   fig.add_trace(plotly.graph_objects.Scatter(x=all_rating, y=all_rev, text=all_name)) 
+   fig.add_trace(plotly.graph_objects.Scatter(x=all_rating, y=all_name, text=all_name)) 
 
-   fig.update_layout(title="Raing vs Total Review Counts",
+   fig.update_layout(title="Rating for the Restaurant",
                      xaxis_title = "Ratings")
+   fig.show()
+
+def scatter_for_rev(all_rev, all_name):
+   fig = plotly.graph_objects.Figure()
+   fig.add_trace(plotly.graph_objects.Scatter(x=all_rev, y=all_name, text=all_name)) 
+
+   fig.update_layout(title="Total Review Counts for the Restaurant",
+                     xaxis_title = "Total Review Counts")
    fig.show()
 
 if __name__ == "__main__":
@@ -272,13 +280,13 @@ if __name__ == "__main__":
 					print("The relevant data is not available.")
 			for location in maps:
 				insert_map_database()
-		print("--------------------")
-		print("Data Visualization:")
-		print("--------------------") 
-		print(f"[1] See bar chart comparison of ratings between different restaurants for your current search result.")
-		print(f"[2] See scatter graph comparison of total review counts and ratings for your current search result.")
-		print(f"[3] See bar chart comparison of of total review counts and ratings for your current search result.")
-		print(f"[4] See bar chart comparison of total review counts between different restaurants for your current search result")
+		print("---------------------")
+		print("Data Visualizations:")
+		print("---------------------") 
+		print(f"[1] See a bar chart comparison of ratings between different restaurants for your current search result.")
+		print(f"[2] See a scatter graph comparison of total review counts and ratings for your current search result.")
+		print(f"[3] See a bar chart comparison of of total review counts and ratings for your current search result.")
+		print(f"[4] See a scatter chart comparison of total review counts between different restaurants for your current search result")
 		
 		number = input("Choose data presentation method by enter the number or 'exit':")
 		if number == 'exit':
@@ -289,6 +297,6 @@ if __name__ == "__main__":
 		if number== 2:
 			print(scatter_for_three(all_rating, all_rev, all_name))
 		if number == 3:
-			print(scatter_for_two(all_rating, all_rev))
+			print(scatter_for_two(all_rating, all_name))
 		if number == 4:
-			print(bar_chart_rev(all_rev, all_name))
+			print(scatter_for_rev(all_rev, all_name))
