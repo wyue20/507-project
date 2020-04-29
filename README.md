@@ -4,12 +4,7 @@ Informaton contained in this README:
 
 - Please obtain your personal API key from Yelp: please visit https://www.yelp.com/developers/documentation/v3/authentication
 
-- Required Python packages for your project to work:
-- import requests
-- import secrets # file that contains your API key
-- import sqlite3
-- import time
-- import plotly.graph_objects as go
+- Required Python packages for your project to work:requests;sqlite3; time; plotly.graph_objects
 
 - URLs for data and documentation: https://www.yelp.com/developers/documentation/v3/business_search
 https://www.yelp.com/developers/documentation/v3/business_reviews
