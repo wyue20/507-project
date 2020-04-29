@@ -272,9 +272,9 @@ if __name__ == "__main__":
 					print("The relevant data is not available.")
 			for location in maps:
 				insert_map_database()
-		print("-------------------------------")
-		print("Data Visualizations:")
-		print("-------------------------------") 
+		print("--------------------")
+		print("Data Visualization:")
+		print("--------------------") 
 		print(f"[1] See bar chart comparison of ratings between different restaurants for your current search result.")
 		print(f"[2] See scatter graph comparison of total review counts and ratings for your current search result.")
 		print(f"[3] See bar chart comparison of of total review counts and ratings for your current search result.")
